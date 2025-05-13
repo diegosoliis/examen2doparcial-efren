@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de Caracteres</title>
+</head>
+<body>
+  <input type="text" id="texto" placeholder="Escribe algo..." oninput="contarCaracteres()">
+  <p id="contador">0 caracteres</p>
+
+  <script>
+    function contarCaracteres() {
+      const nombre = "Diego Solís Rentería";
+      const texto = document.getElementById("texto").value;
+      document.getElementById("contador").innerText = `${texto.length} caracteres - Solución de: ${nombre}`;
+    }
+  </script>
+</body>
+</html>

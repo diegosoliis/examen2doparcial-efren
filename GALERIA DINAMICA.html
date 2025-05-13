@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería</title>
+</head>
+<body>
+  <input type="file" id="imagen" accept="image/*">
+  <button onclick="agregarImagen()">Subir Imagen</button>
+  <div id="galeria"></div>
+
+  <script>
+    function agregarImagen() {
+      const nombre = "Diego Solís Rentería";
+      const file = document.getElementById("imagen").files[0];
+      if (file) {
+        // Crear un contenedor para la imagen y el nombre
+        const contenedor = document.createElement("div");
+        contenedor.style.textAlign = "center";
+        contenedor.style.margin = "10px";
+
+        // Crear la imagen
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(file);
+        img.alt = `Subida por: ${nombre}`;
+        img.style.width = "150px";
+        img.style.marginBottom = "5px";
+
+        // Crear el texto con tu nombre
+        const texto = document.createElement("p");
+        texto.innerText = `Subida por: ${nombre}`;
+        texto.style.fontSize = "14px";
+        texto.style.fontFamily = "Arial, sans-serif";
+
+        // Agregar la imagen y el texto al contenedor
+        contenedor.appendChild(img);
+        contenedor.appendChild(texto);
+
+        // Agregar el contenedor a la galería
+        document.getElementById("galeria").appendChild(contenedor);
+      }
+    }
+  </script>
+</body>
+</html>
+
+    }
+  </script>
+</body>
+</html>

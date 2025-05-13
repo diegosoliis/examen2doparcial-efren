@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Temporizador</title>
+</head>
+<body>
+  <h2>Temporizador Interactivo</h2>
+  <button onclick="iniciar()">Iniciar</button>
+  <button onclick="detener()">Detener</button>
+  <p id="tiempo">0 segundos</p>
+
+  <script>
+    let intervalo;
+    let segundos = 0;
+
+    function iniciar() {
+      const nombre = "Diego Solís Rentería";
+      detener(); // Asegura que no se creen múltiples intervalos
+      intervalo = setInterval(() => {
+        segundos++;
+        document.getElementById("tiempo").innerText = `${segundos} segundos - Solución de: ${nombre}`;
+      }, 1000);
+    }
+
+    function detener() {
+      clearInterval(intervalo);
+    }
+  </script>
+</body>
+</html>

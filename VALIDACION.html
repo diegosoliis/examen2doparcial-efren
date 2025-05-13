@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+</head>
+<body>
+  <input type="text" id="nombre" placeholder="Nombre Completo">
+  <input type="email" id="correo" placeholder="Correo Electrónico">
+  <button onclick="validarFormulario()">Enviar</button>
+  <p id="mensaje"></p>
+
+  <script>
+    function validarFormulario() {
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const nombreCompleto = "Diego Solís Rentería";
+
+      if (nombre === "" || correo === "") {
+        document.getElementById("mensaje").innerText = `Todos los campos son obligatorios - Solución de: ${nombreCompleto}`;
+      } else {
+        document.getElementById("mensaje").innerText = `Formulario enviado correctamente - Solución de: ${nombreCompleto}`;
+      }
+    }
+  </script>
+</body>
+</html>

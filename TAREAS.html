@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
+</head>
+<body>
+  <input type="text" id="tarea" placeholder="Nueva tarea">
+  <button onclick="agregarTarea()">Agregar</button>
+  <ul id="listaTareas"></ul>
+
+  <script>
+    function agregarTarea() {
+      const nombre = "Diego Solís Rentería";
+      const tarea = document.getElementById("tarea").value;
+      if (tarea.trim() !== "") {
+        const li = document.createElement("li");
+        li.innerText = `${tarea} - Solución de: ${nombre}`;
+        document.getElementById("listaTareas").appendChild(li);
+        document.getElementById("tarea").value = "";
+      }
+    }
+  </script>
+</body>
+</html>
